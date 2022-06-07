@@ -70,12 +70,12 @@ def get_pie_chart(entered_site):
     else:
         data = filtered_df[['Launch Site','class']][filtered_df['Launch Site'] == entered_site]
         
-        print (data)
+        #print (data)
         data = data.groupby(['class']).count().reset_index()
 
-        print (data)
+        #print (data)
 
-        fig = px.pie(data, values='count', 
+        fig = px.pie(data, values='Launch Site', 
         names='class', 
         title='Total Successful Launch by Site')
         return fig
